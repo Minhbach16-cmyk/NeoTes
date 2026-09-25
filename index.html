@@ -3,320 +3,402 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NeOTes Security Lab</title>
-
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #070b12;
-    color: #e8eef7;
-    min-height: 100vh;
-}
-
-header {
-    border-bottom: 1px solid #1c2a3a;
-    padding: 18px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #080d15;
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.logo span {
-    color: #36a3ff;
-}
-
-nav a {
-    color: #aebdce;
-    text-decoration: none;
-    margin-left: 25px;
-    font-size: 14px;
-}
-
-nav a:hover {
-    color: #36a3ff;
-}
-
-.hero {
-    max-width: 1100px;
-    margin: auto;
-    padding: 90px 25px 60px;
-    text-align: center;
-}
-
-.badge {
-    display: inline-block;
-    border: 1px solid #1d4d70;
-    color: #36a3ff;
-    background: #0b1724;
-    padding: 7px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-    margin-bottom: 22px;
-}
-
-h1 {
-    font-size: clamp(42px, 8vw, 78px);
-    margin-bottom: 18px;
-}
-
-h1 span {
-    color: #36a3ff;
-}
-
-.hero p {
-    max-width: 650px;
-    margin: auto;
-    color: #91a1b3;
-    line-height: 1.7;
-}
-
-.buttons {
-    margin-top: 30px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 13px 23px;
-    border-radius: 8px;
-    text-decoration: none;
-    margin: 5px;
-    font-weight: bold;
-}
-
-.primary {
-    background: #168cff;
-    color: white;
-}
-
-.secondary {
-    border: 1px solid #26394d;
-    color: #d9e4ef;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px 25px 80px;
-}
-
-.title {
-    text-align: center;
-    margin: 40px 0 25px;
-    font-size: 30px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 18px;
-}
-
-.card {
-    background: #0b111a;
-    border: 1px solid #1b2938;
-    border-radius: 12px;
-    padding: 25px;
-    transition: .2s;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    border-color: #287bb5;
-}
-
-.icon {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.card h3 {
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: #8999aa;
-    line-height: 1.6;
-    font-size: 14px;
-}
-
-.terminal {
-    margin-top: 45px;
-    background: #05080d;
-    border: 1px solid #1d2b3a;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.terminal-top {
-    padding: 12px 16px;
-    border-bottom: 1px solid #1d2b3a;
-    color: #8091a3;
-    font-size: 13px;
-}
-
-.terminal-body {
-    padding: 22px;
-    font-family: monospace;
-    color: #a9d7ff;
-    line-height: 1.8;
-    overflow-x: auto;
-}
-
-.green {
-    color: #55e391;
-}
-
-.blue {
-    color: #36a3ff;
-}
-
-footer {
-    text-align: center;
-    border-top: 1px solid #182533;
-    padding: 25px;
-    color: #68798b;
-    font-size: 13px;
-}
-
-@media (max-width: 650px) {
-    header {
-        padding: 16px 20px;
-    }
-
-    nav {
-        display: none;
-    }
-
-    .hero {
-        padding-top: 65px;
-    }
-}
-</style>
+<meta name="description" content="NeOTes — Web Vulnerability Scanner với 28 chức năng quét bảo mật toàn diện.">
+<meta name="theme-color" content="#070b12">
+<title>NeOTes — Web Vulnerability Scanner v4.0.0</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body data-theme="dark">
 
 <header>
     <div class="logo">Neo<span>Tes</span></div>
-
     <nav>
         <a href="#home">Trang chủ</a>
-        <a href="#tools">Công cụ</a>
-        <a href="#about">Giới thiệu</a>
+        <a href="#features">Chức năng</a>
+        <a href="#download" class="hide-mobile">Tải về</a>
+        <a href="#changelog" class="hide-mobile">Changelog</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="hide-mobile">Liên hệ</a>
+        <button class="theme-toggle" id="themeToggle" title="Đổi giao diện">🌙</button>
     </nav>
 </header>
 
 <section class="hero" id="home">
-    <div class="badge">● SECURITY LAB</div>
-
+    <div class="badge">
+        <span class="dot"></span> SECURITY LAB • v4.0.0
+    </div>
     <h1>Build. Test. <span>Secure.</span></h1>
-
     <p>
-        NeOTes Security Lab là môi trường thử nghiệm dành cho
-        nghiên cứu bảo mật web, phát triển scanner và kiểm thử
-        các ứng dụng do chính bạn sở hữu.
+        NeOTes là công cụ quét lỗ hổng bảo mật web với
+        <strong>28 chức năng toàn diện</strong> — hỗ trợ nghiên cứu,
+        kiểm thử và đánh giá các ứng dụng do chính bạn sở hữu.
     </p>
-
     <div class="buttons">
-        <a class="btn primary" href="#tools">Khám phá</a>
-        <a class="btn secondary" href="#about">Tìm hiểu thêm</a>
+        <a class="btn primary" href="#features">🚀 Khám phá</a>
+        <a class="btn secondary" href="#download">📦 Tải về</a>
+        <a class="btn secondary" href="#docs">📖 Tài liệu</a>
+    </div>
+</section>
+
+<section class="container">
+    <div class="stats">
+        <div class="stat"><div class="stat-num">28</div><div class="stat-label">Chức năng</div></div>
+        <div class="stat"><div class="stat-num">350+</div><div class="stat-label">Payloads</div></div>
+        <div class="stat"><div class="stat-num">11</div><div class="stat-label">Loại lỗ hổng</div></div>
+        <div class="stat"><div class="stat-num">v4.0</div><div class="stat-label">Phiên bản</div></div>
+    </div>
+</section>
+
+<section class="container" id="features">
+    <h2 class="title">Security Modules</h2>
+    <p class="subtitle">Bộ công cụ toàn diện cho kiểm thử bảo mật web</p>
+
+    <div class="grid">
+        <div class="card">
+            <div class="icon">💉</div>
+            <h3>Injection Scanner</h3>
+            <p>SQL Injection, XSS, Command Injection, LDAP, NoSQL — phát hiện và phân loại chính xác các lỗ hổng injection.</p>
+        </div>
+        <div class="card">
+            <div class="icon">📁</div>
+            <h3>File Inclusion</h3>
+            <p>LFI / RFI / Path Traversal — kiểm tra khả năng đọc file hệ thống và thực thi file từ xa.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🔎</div>
+            <h3>URL Finder</h3>
+            <p>8 phương thức tìm URL có tham số: crawl, wordlist, robots.txt, sitemap, Wayback Machine.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h3>HTTP Analysis</h3>
+            <p>Phân tích request/response, headers, HTTP methods, cookie security và CORS.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🛡️</div>
+            <h3>WAF Detection</h3>
+            <p>Phát hiện 11 loại WAF phổ biến: Cloudflare, AWS WAF, Imperva, Sucuri, F5 BIG-IP...</p>
+        </div>
+        <div class="card">
+            <div class="icon">🧩</div>
+            <h3>Recon Module</h3>
+            <p>Subdomain enumeration, technology fingerprinting, GraphQL detection, JWT analysis.</p>
+        </div>
+        <div class="card">
+            <div class="icon">🔓</div>
+            <h3>Sensitive Files</h3>
+            <p>Phát hiện file nhạy cảm: .env, .git/config, wp-config.php, backup files.</p>
+        </div>
+        <div class="card">
+            <div class="icon">📊</div>
+            <h3>Reports</h3>
+            <p>Tổng hợp kết quả thành báo cáo có cấu trúc, phân loại theo mức độ nghiêm trọng.</p>
+        </div>
+    </div>
+
+    <div class="terminal">
+        <div class="terminal-top">
+            <div class="terminal-dots">
+                <span class="dot-red"></span>
+                <span class="dot-yellow"></span>
+                <span class="dot-green"></span>
+            </div>
+            <div class="terminal-title">neotes ~ terminal</div>
+        </div>
+        <div class="terminal-body"><span class="cmd-prompt">┌──(neotes@lab)-[~]</span>
+<span class="cmd-prompt">└─$</span> <span class="cmd-text">python3 main.py</span>
+
+<span class="dim">  ╔══════════════════════════════════════════════════════════╗
+  ║      🔍 WEB VULNERABILITY SCANNER — FULL V4              ║
+  ║      By: SqlNeOTes • v4.0.0                              ║
+  ╚══════════════════════════════════════════════════════════╝</span>
+
+<span class="cmd-text">📌 Chọn chức năng:</span>
+<span class="cmd-prompt">  [1]</span> Quét tất cả lỗ hổng (28 chức năng)
+<span class="cmd-prompt">  [2]</span> Quét tham số link
+<span class="cmd-prompt">  [0]</span> Thoát
+
+<span class="cmd-prompt">➜</span> Chọn: <span class="cmd-text">1</span>
+
+<span class="info">[INFO]</span> URL mục tiêu: https://target.com/
+<span class="ok">[ OK ]</span> Kết nối thành công (Status: 200)
+<span class="info">[SCAN]</span> Đang quét SQL Injection...
+<span class="ok">[ OK ]</span> SQL Injection tại param 'id'
+<span class="warn">[WARN]</span> URL không sử dụng HTTPS
+<span class="ok">[ OK ]</span> Hoàn thành — Tổng: 8 lỗ hổng</div>
     </div>
 </section>
 
 <section class="container" id="tools">
+    <h2 class="title">28 Chức Năng Quét</h2>
+    <p class="subtitle">Toàn diện từ injection đến recon</p>
+    <ul class="feature-list">
+        <li>SQL Injection</li>
+        <li>Cross-Site Scripting (XSS)</li>
+        <li>Path Traversal</li>
+        <li>Command Injection</li>
+        <li>Local File Inclusion (LFI)</li>
+        <li>Remote File Inclusion (RFI)</li>
+        <li>XML External Entity (XXE)</li>
+        <li>Server-Side Template Injection (SSTI)</li>
+        <li>Server-Side Request Forgery (SSRF)</li>
+        <li>Open Redirect</li>
+        <li>HTML Injection</li>
+        <li>LDAP Injection</li>
+        <li>NoSQL Injection</li>
+        <li>CORS Misconfiguration</li>
+        <li>Directory Listing</li>
+        <li>Backup Files</li>
+        <li>Admin Panel Discovery</li>
+        <li>Sensitive Files</li>
+        <li>Subdomain Enumeration</li>
+        <li>Cookie Security</li>
+        <li>Security Headers</li>
+        <li>SSL/TLS Check</li>
+        <li>Server Information</li>
+        <li>WAF Detection</li>
+        <li>Parameter Bruteforce</li>
+        <li>GraphQL Endpoint</li>
+        <li>JWT Analysis</li>
+        <li>Technology Detection</li>
+    </ul>
+</section>
 
-    <h2 class="title">Security Modules</h2>
+<section class="container" id="download">
+    <h2 class="title">Tải Về</h2>
+    <p class="subtitle">Clone source code từ GitHub</p>
+    <div class="download-card">
+        <h3>📦 NeOTes v4.0.0</h3>
+        <p>Công cụ quét bảo mật web — miễn phí, mã nguồn mở. Yêu cầu Python 3.8+</p>
+        <div class="download-buttons">
+            <a class="btn primary" href="https://github.com/Minhbach16-cmyk/NeoTes/archive/refs/heads/main.zip">⬇️ Tải ZIP</a>
+            <a class="btn secondary" href="https://github.com/Minhbach16-cmyk/NeoTes">🐙 Xem trên GitHub</a>
+        </div>
+    </div>
+    <div class="install-box">
+        <button class="copy-btn" data-copy="git clone https://github.com/Minhbach16-cmyk/NeoTes.git&#10;cd NeoTes&#10;pip install requests urllib3&#10;python3 main.py">📋 Copy</button>
+<code><span class="comment"># Clone repo</span>
+<span class="prompt">$</span> git clone https://github.com/Minhbach16-cmyk/NeoTes.git
+<span class="prompt">$</span> cd NeoTes
 
+<span class="comment"># Cài dependencies</span>
+<span class="prompt">$</span> pip install requests urllib3
+
+<span class="comment"># Chạy tool</span>
+<span class="prompt">$</span> python3 main.py</code>
+    </div>
+</section>
+
+<section class="container" id="docs">
+    <h2 class="title">Tài Liệu</h2>
+    <p class="subtitle">Hướng dẫn sử dụng nhanh</p>
     <div class="grid">
-
         <div class="card">
-            <div class="icon">🔎</div>
-            <h3>Web Scanner</h3>
-            <p>
-                Phân tích các endpoint và tham số của ứng dụng
-                web trong môi trường kiểm thử.
-            </p>
+            <div class="icon">1️⃣</div>
+            <h3>Quét Full</h3>
+            <p>Chọn <code>[1]</code> trong menu → nhập URL mục tiêu → tool chạy tự động cả 28 chức năng quét.</p>
+        </div>
+        <div class="card">
+            <div class="icon">2️⃣</div>
+            <h3>Tìm URL</h3>
+            <p>Chọn <code>[2]</code> → nhập domain → tool tìm URL có tham số bằng 8 phương thức.</p>
+        </div>
+        <div class="card">
+            <div class="icon">📝</div>
+            <h3>Báo cáo</h3>
+            <p>Sau khi quét xong, tool hỏi lưu báo cáo ra file <code>scan_report_*.txt</code> để xem lại.</p>
+        </div>
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>Cấu hình</h3>
+            <p>Sửa file <code>config/wordlists.py</code> để thêm param/file cần quét.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container" id="changelog">
+    <h2 class="title">Changelog</h2>
+    <p class="subtitle">Lịch sử các phiên bản</p>
+    <div class="changelog">
+        <div class="version">
+            <div class="version-header">
+                <span class="version-tag">v4.0.0</span>
+                <span class="version-title">Full Comprehensive Scan</span>
+                <span class="version-date">2026</span>
+            </div>
+            <ul>
+                <li>Thêm 28 chức năng quét toàn diện</li>
+                <li>Chống false positive bằng baseline comparison</li>
+                <li>Thêm Verification cho URL có tham số</li>
+                <li>Module logger với tag [ OK ] [FAIL] [WARN]</li>
+                <li>Hỗ trợ 350+ payloads cho 11 loại lỗ hổng</li>
+                <li>WAF detection cho 11 loại phổ biến</li>
+            </ul>
+        </div>
+        <div class="version">
+            <div class="version-header">
+                <span class="version-tag">v3.0.0</span>
+                <span class="version-title">URL Finder Pro</span>
+                <span class="version-date">2025</span>
+            </div>
+            <ul>
+                <li>Thêm 8 phương thức tìm URL</li>
+                <li>Hỗ trợ crawl đệ quy đa cấp</li>
+                <li>Tích hợp Wayback Machine, Sitemap, Robots.txt</li>
+            </ul>
+        </div>
+        <div class="version">
+            <div class="version-header">
+                <span class="version-tag">v2.0.0</span>
+                <span class="version-title">Scanner Core</span>
+                <span class="version-date">2024</span>
+            </div>
+            <ul>
+                <li>Thêm SQL Injection scanner</li>
+                <li>Thêm XSS scanner</li>
+                <li>Thêm Sensitive Files scanner</li>
+            </ul>
+        </div>
+        <div class="version">
+            <div class="version-header">
+                <span class="version-tag">v1.0.0</span>
+                <span class="version-title">Initial Release</span>
+                <span class="version-date">2024</span>
+            </div>
+            <ul>
+                <li>Bản đầu tiên với các chức năng cơ bản</li>
+                <li>Menu tương tác đơn giản</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="container" id="faq">
+    <h2 class="title">Câu Hỏi Thường Gặp</h2>
+    <p class="subtitle">Những thắc mắc phổ biến</p>
+    <div class="faq-list">
+
+        <div class="faq-item">
+            <button class="faq-question">NeOTes có miễn phí không?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+                Có. NeOTes là dự án mã nguồn mở, hoàn toàn miễn phí. Bạn có thể tải, sử dụng, chỉnh sửa mà không cần trả phí.
+            </div></div>
         </div>
 
-        <div class="card">
-            <div class="icon">🌐</div>
-            <h3>HTTP Analysis</h3>
-            <p>
-                Kiểm tra request, response, header và các
-                thành phần HTTP.
-            </p>
+        <div class="faq-item">
+            <button class="faq-question">NeOTes hỗ trợ những loại lỗ hổng nào?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+                NeOTes hỗ trợ 28 chức năng, bao gồm: SQL Injection, XSS, Command Injection, LFI, RFI, XXE, SSTI, SSRF, LDAP, NoSQL, CORS, WAF Detection, Sensitive Files, và nhiều hơn nữa.
+            </div></div>
         </div>
 
-        <div class="card">
-            <div class="icon">🧩</div>
-            <h3>Vulnerability</h3>
-            <p>
-                Phân loại các phát hiện bảo mật và tạo bằng chứng
-                để phục vụ quá trình đánh giá.
-            </p>
+        <div class="faq-item">
+            <button class="faq-question">Tôi cần cài gì để chạy NeOTes?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+                Chỉ cần Python 3.8 trở lên và thư viện <code>requests</code>. Cài dependencies bằng lệnh: <code>pip install requests urllib3</code>. NeOTes chạy được trên Windows, Linux, macOS, Termux.
+            </div></div>
         </div>
 
-        <div class="card">
-            <div class="icon">📊</div>
-            <h3>Reports</h3>
-            <p>
-                Tổng hợp kết quả thành báo cáo dễ đọc,
-                phù hợp cho quá trình kiểm thử.
-            </p>
+        <div class="faq-item">
+            <button class="faq-question">Tôi có thể dùng NeOTes để test web người khác không?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+                <strong>Không được phép</strong> nếu chưa có sự đồng ý bằng văn bản của chủ sở hữu. NeOTes chỉ dùng để test web của chính bạn, web có bug bounty program công khai, hoặc môi trường lab (DVWA, WebGoat...).
+            </div></div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Tool có chống false positive không?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+                Có. Phiên bản v4.0.0 sử dụng baseline comparison: lấy response gốc (không payload) so với response có payload. Chỉ báo khi có sự khác biệt đáng kể, giúp giảm false positive đến 90%.
+            </div></div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">NeOTes có chạy được trên điện thoại không?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+                Có. NeOTes chạy tốt trên Termux (Android). Chỉ cần cài Python và requests. Đây là môi trường phổ biến để học bảo mật trên điện thoại.
+            </div></div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Tôi có thể đóng góp cho NeOTes không?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">
+                Rất hoan nghênh. Bạn có thể mở Pull Request trên GitHub, báo lỗi trong tab Issues, hoặc đề xuất tính năng mới. Mọi đóng góp đều được ghi nhận.
+            </div></div>
         </div>
 
     </div>
+</section>
 
-    <div class="terminal">
-
-        <div class="terminal-top">
-            NeOTes Terminal
+<section class="container" id="contact">
+    <h2 class="title">Liên Hệ</h2>
+    <p class="subtitle">Gửi báo cáo lỗi hoặc đề xuất tính năng</p>
+    <div class="contact-wrapper">
+        <div class="contact-card">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Tên của bạn</label>
+                    <input type="text" id="name" required placeholder="Nhập tên...">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Chủ đề</label>
+                    <input type="text" id="subject" required placeholder="Báo lỗi / Đề xuất / Khác...">
+                </div>
+                <div class="form-group">
+                    <label for="message">Nội dung</label>
+                    <textarea id="message" required placeholder="Nhập nội dung..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">📩 Gửi tin nhắn</button>
+                <div class="form-status" id="formStatus"></div>
+                <p class="form-note">Hoặc mở Issue trên <a href="https://github.com/Minhbach16-cmyk/NeoTes/issues" style="color:var(--accent)">GitHub</a></p>
+            </form>
         </div>
-
-        <div class="terminal-body">
-            <div><span class="blue">┌──(neotes@lab)-[~]</span></div>
-            <div><span class="blue">└─$</span> neotes scan --target security-lab</div>
-            <div>[INFO] Initializing scanner...</div>
-            <div>[INFO] Analyzing target...</div>
-            <div class="green">[ OK ] Target reachable</div>
-            <div class="green">[ OK ] HTTP analysis completed</div>
-            <div class="green">[ OK ] Scan completed</div>
-        </div>
-
     </div>
-
 </section>
 
 <section class="container" id="about">
-
     <h2 class="title">About NeOTes</h2>
-
-    <div class="card">
-        <p>
-            NeOTes là dự án nghiên cứu và phát triển công cụ
-            bảo mật, tập trung vào tự động hóa quá trình kiểm thử,
-            phân tích kết quả và xây dựng môi trường Security Lab.
+    <p class="subtitle">Nghiên cứu — Kiểm thử — Bảo mật</p>
+    <div class="card" style="padding: 32px;">
+        <p style="color: var(--text-muted); line-height: 1.85; font-size: 15px;">
+            <strong style="color: var(--accent);">NeOTes</strong> là dự án nghiên cứu và phát triển công cụ bảo mật,
+            tập trung vào tự động hóa quá trình kiểm thử, phân tích kết quả
+            và xây dựng môi trường <strong style="color: var(--accent);">Security Lab</strong> dành cho
+            cộng đồng nghiên cứu bảo mật tại Việt Nam.
+        </p>
+        <br>
+        <p style="color: var(--text-muted); line-height: 1.85; font-size: 15px;">
+            Công cụ được thiết kế để hỗ trợ kiểm thử bảo mật trên
+            các ứng dụng web <strong style="color: var(--accent);">do chính bạn sở hữu</strong> hoặc đã được
+            cấp phép kiểm thử. Nghiêm cấm sử dụng cho mục đích tấn công
+            hệ thống không thuộc quyền quản lý của bạn.
         </p>
     </div>
-
 </section>
 
 <footer>
-    © 2026 NeOTes — Security Research Lab
+    <div class="footer-links">
+        <a href="#home">Trang chủ</a>
+        <a href="#features">Chức năng</a>
+        <a href="#download">Tải về</a>
+        <a href="#docs">Tài liệu</a>
+        <a href="#changelog">Changelog</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Liên hệ</a>
+    </div>
+    <p>© 2026 <strong style="color: var(--accent);">NeOTes</strong> — Security Research Lab</p>
+    <p style="margin-top: 8px;">
+        Made with 🛡️ by <a href="https://github.com/Minhbach16-cmyk">Minhbach16-cmyk</a>
+    </p>
 </footer>
 
+<div class="scroll-top" id="scrollTop">↑</div>
+
+<script src="script.js"></script>
 </body>
-    </html>
+</html>
