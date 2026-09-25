@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NeOTes Security Lab</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #070b12;
+    color: #e8eef7;
+    min-height: 100vh;
+}
+
+header {
+    border-bottom: 1px solid #1c2a3a;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #080d15;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #36a3ff;
+}
+
+nav a {
+    color: #aebdce;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #36a3ff;
+}
+
+.hero {
+    max-width: 1100px;
+    margin: auto;
+    padding: 90px 25px 60px;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    border: 1px solid #1d4d70;
+    color: #36a3ff;
+    background: #0b1724;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+h1 {
+    font-size: clamp(42px, 8vw, 78px);
+    margin-bottom: 18px;
+}
+
+h1 span {
+    color: #36a3ff;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    color: #91a1b3;
+    line-height: 1.7;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 23px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.primary {
+    background: #168cff;
+    color: white;
+}
+
+.secondary {
+    border: 1px solid #26394d;
+    color: #d9e4ef;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px 25px 80px;
+}
+
+.title {
+    text-align: center;
+    margin: 40px 0 25px;
+    font-size: 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: #0b111a;
+    border: 1px solid #1b2938;
+    border-radius: 12px;
+    padding: 25px;
+    transition: .2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #287bb5;
+}
+
+.icon {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #8999aa;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.terminal {
+    margin-top: 45px;
+    background: #05080d;
+    border: 1px solid #1d2b3a;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.terminal-top {
+    padding: 12px 16px;
+    border-bottom: 1px solid #1d2b3a;
+    color: #8091a3;
+    font-size: 13px;
+}
+
+.terminal-body {
+    padding: 22px;
+    font-family: monospace;
+    color: #a9d7ff;
+    line-height: 1.8;
+    overflow-x: auto;
+}
+
+.green {
+    color: #55e391;
+}
+
+.blue {
+    color: #36a3ff;
+}
+
+footer {
+    text-align: center;
+    border-top: 1px solid #182533;
+    padding: 25px;
+    color: #68798b;
+    font-size: 13px;
+}
+
+@media (max-width: 650px) {
+    header {
+        padding: 16px 20px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 65px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Neo<span>Tes</span></div>
+
+    <nav>
+        <a href="#home">Trang chủ</a>
+        <a href="#tools">Công cụ</a>
+        <a href="#about">Giới thiệu</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="badge">● SECURITY LAB</div>
+
+    <h1>Build. Test. <span>Secure.</span></h1>
+
+    <p>
+        NeOTes Security Lab là môi trường thử nghiệm dành cho
+        nghiên cứu bảo mật web, phát triển scanner và kiểm thử
+        các ứng dụng do chính bạn sở hữu.
+    </p>
+
+    <div class="buttons">
+        <a class="btn primary" href="#tools">Khám phá</a>
+        <a class="btn secondary" href="#about">Tìm hiểu thêm</a>
+    </div>
+</section>
+
+<section class="container" id="tools">
+
+    <h2 class="title">Security Modules</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">🔎</div>
+            <h3>Web Scanner</h3>
+            <p>
+                Phân tích các endpoint và tham số của ứng dụng
+                web trong môi trường kiểm thử.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌐</div>
+            <h3>HTTP Analysis</h3>
+            <p>
+                Kiểm tra request, response, header và các
+                thành phần HTTP.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🧩</div>
+            <h3>Vulnerability</h3>
+            <p>
+                Phân loại các phát hiện bảo mật và tạo bằng chứng
+                để phục vụ quá trình đánh giá.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📊</div>
+            <h3>Reports</h3>
+            <p>
+                Tổng hợp kết quả thành báo cáo dễ đọc,
+                phù hợp cho quá trình kiểm thử.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="terminal">
+
+        <div class="terminal-top">
+            NeOTes Terminal
+        </div>
+
+        <div class="terminal-body">
+            <div><span class="blue">┌──(neotes@lab)-[~]</span></div>
+            <div><span class="blue">└─$</span> neotes scan --target security-lab</div>
+            <div>[INFO] Initializing scanner...</div>
+            <div>[INFO] Analyzing target...</div>
+            <div class="green">[ OK ] Target reachable</div>
+            <div class="green">[ OK ] HTTP analysis completed</div>
+            <div class="green">[ OK ] Scan completed</div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="container" id="about">
+
+    <h2 class="title">About NeOTes</h2>
+
+    <div class="card">
+        <p>
+            NeOTes là dự án nghiên cứu và phát triển công cụ
+            bảo mật, tập trung vào tự động hóa quá trình kiểm thử,
+            phân tích kết quả và xây dựng môi trường Security Lab.
+        </p>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 NeOTes — Security Research Lab
+</footer>
+
+</body>
+</html>
